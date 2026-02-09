@@ -4,7 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 interface Usuario {
   id: number;
   name: string;
-  state: boolean;
+  state: boolean | "indeterminate";
 }
 
 const Crud = () => {
@@ -16,6 +16,10 @@ const Crud = () => {
     { id: 5, name: "María López", state: false },
   ]);
 
+  const onStateChange = (value: boolean | "indeterminate") => {
+    //actualizar
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col gap-4 p-4">
       {usuarios.map((usuario, index) => (
@@ -23,9 +27,7 @@ const Crud = () => {
           <p>{usuario.name}</p>
           <Checkbox
             checked={usuario.state}
-            onCheckedChange={(chk) => {
-              console.log(chk);
-            }}
+            onCheckedChange={(chk) => onStateChange(chk)}
           />
         </div>
       ))}
