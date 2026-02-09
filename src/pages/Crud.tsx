@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
 
 interface Usuario {
   id: number;
@@ -16,7 +18,7 @@ const Crud = () => {
     { id: 5, name: "María López", state: false },
   ]);
 
-  const onStateChange = (value: boolean | "indeterminate") => {
+  const onStateChange = (id: number, checked: boolean | "indeterminate") => {
     //actualizar
   };
 
@@ -26,9 +28,12 @@ const Crud = () => {
         <div key={index} className="flex flex-row items-center gap-2">
           <p>{usuario.name}</p>
           <Checkbox
-            checked={usuario.state}
-            onCheckedChange={(chk) => onStateChange(chk)}
+            checked={usuario.state === "indeterminate" ? false : usuario.state}
+            onCheckedChange={(checked) => onStateChange(usuario.id, checked)}
           />
+          <Button variant={"destructive"}>
+            <Trash2 />
+          </Button>
         </div>
       ))}
     </div>
