@@ -105,7 +105,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
               <CommandList>
                 <CommandEmpty>No se encontraron productos</CommandEmpty>
                 <CommandGroup>
-
                   <CommandItem className="flex items-center gap-3">
                     <div className="h-10 w-10 flex items-center justify-center border rounded">
                       <ImageIcon className="h-4 w-4 text-muted-foreground" />
