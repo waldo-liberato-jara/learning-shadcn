@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 interface Usuario {
   id: number;
@@ -26,8 +27,21 @@ const Crud = () => {
     );
   };
 
+  const onDeleteUser = (id: number) => {
+    setUsuarios((prev) => prev.filter((usuario) => usuario.id !== id));
+  };
+
+  const onCreate = (e: React.SubmitEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col gap-4 p-4">
+      <form onSubmit={(e) => onCreate(e)}>
+        <Input />
+        <Button>Crear</Button>
+      </form>
+
       {usuarios.map((usuario, index) => (
         <div key={index} className="flex flex-row items-center gap-2">
           <p>{usuario.name}</p>
@@ -35,7 +49,10 @@ const Crud = () => {
             checked={usuario.state === "indeterminate" ? false : usuario.state}
             onCheckedChange={(checked) => onStateChange(usuario.id, checked)}
           />
-          <Button variant={"destructive"}>
+          <Button
+            onClick={() => onDeleteUser(usuario.id)}
+            variant={"destructive"}
+          >
             <Trash2 />
           </Button>
         </div>
