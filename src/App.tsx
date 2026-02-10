@@ -4,7 +4,7 @@ import "./App.css";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Checkbox } from "./components/ui/checkbox";
 import { useState } from "react";
-import Crud from "./pages/Crud";
+import {Crud}  from "./modules/crud/pages/Crud";
 
 function App() {
   const [isTransfer, setIsTransfer] = useState<boolean | "indeterminate">(
