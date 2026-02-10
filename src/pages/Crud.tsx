@@ -9,7 +9,7 @@ interface Usuario {
   name: string;
   state: boolean | "indeterminate";
 }
-
+//
 const Crud = () => {
   const [usuarios, setUsuarios] = useState<Usuario[]>([
     { id: 1, name: "Ana Torres", state: true },
