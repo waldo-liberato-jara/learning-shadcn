@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
@@ -19,7 +19,11 @@ const Crud = () => {
   ]);
 
   const onStateChange = (id: number, checked: boolean | "indeterminate") => {
-    //actualizar
+    setUsuarios((prev) =>
+      prev.map((usuario) =>
+        usuario.id === id ? { ...usuario, state: checked } : usuario,
+      ),
+    );
   };
 
   return (
