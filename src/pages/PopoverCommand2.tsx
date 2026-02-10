@@ -1,3 +1,4 @@
+/*
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -27,13 +28,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { cn } from "@/lib/utils";
 import { CommandInput } from "cmdk";
-import { Search, Image as ImageIcon, Check } from "lucide-react";
+import { Search, Image as ImageIcon } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner";
 import type { Product, SelectedProduct, TypesMovementStock } from "@/types";
-import { products, productsFallidos, typesMovementStock } from "@/data";
+import { typesMovementStock } from "@/data";
 
 interface PopoverCommandProps {
   isTransfer: boolean | "indeterminate";
@@ -71,15 +70,12 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
 
   return (
     <div className="min-h-screen w-full flex flex-col gap-4 p-4">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold">Movimiento de Stock</h1>
         <Button>Crear</Button>
       </div>
 
-      {/* Controls */}
       <div className="flex gap-2 items-center">
-        {/* Tipo de movimiento */}
         <Select>
           <SelectTrigger className="w-60">
             <SelectValue placeholder="Tipo de movimiento" />
@@ -91,7 +87,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
           </SelectContent>
         </Select>
 
-        {/* Buscador */}
         <Popover>
           <PopoverTrigger asChild>
             <Button
@@ -110,7 +105,7 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
               <CommandList>
                 <CommandEmpty>No se encontraron productos</CommandEmpty>
                 <CommandGroup>
-                  {/* Item fake */}
+
                   <CommandItem className="flex items-center gap-3">
                     <div className="h-10 w-10 flex items-center justify-center border rounded">
                       <ImageIcon className="h-4 w-4 text-muted-foreground" />
@@ -136,7 +131,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
         <Button>Agregar</Button>
       </div>
 
-      {/* Table */}
       <Table className="mt-4">
         <TableHeader>
           <TableRow>
@@ -153,7 +147,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
         </TableHeader>
 
         <TableBody>
-          {/* Empty state */}
           <TableRow>
             <TableCell
               colSpan={isTransfer ? 5 : 3}
@@ -163,7 +156,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
             </TableCell>
           </TableRow>
 
-          {/* Fila de ejemplo */}
           <TableRow>
             <TableCell>
               <div className="flex flex-col">
@@ -200,5 +192,6 @@ function PopoverCommand2({ isTransfer }: PopoverCommandProps) {
   );
 }
 
+
 export default PopoverCommand2;
-//hola
+*/
